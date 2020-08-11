@@ -1,0 +1,29 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg">
+    <!-- <a class="navbar-brand" href="#">hapy enterprise</a> -->
+    <a class="navbar-brand d-flex align-items-center justify-content-center" href="{% url 'accounts-home' %}">
+        <div class="navbar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="nav-brand-text mx-3">eu enterprise <sup>&trade;</sup></div>
+      </a>
+    <!-- <a class="navbar-brand" href="#">
+        <i class="fas fa-laugh-wink"></i>
+        <img src="{% static 'accounts/img/eulogo.png' %}" alt="" srcset="">
+    </a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <hr class="border-white">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts-home' %}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts-products' %}">Products</a>
+            </li>
+        </ul>
+    </div>
+</nav>

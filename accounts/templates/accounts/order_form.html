@@ -1,0 +1,84 @@
+{% extends 'accounts/main.html' %}
+
+{% load static %}
+
+{% load custom_filters %}
+
+{% block content %}
+<div class="container-fulid my-3 px-2">
+    <div class="row mx-0">
+        <div class="col p-2">
+            <form class="form-horizontal" action="" method="post" novalidate>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                
+                <fieldset class="form-group border-bottom mb-3 pt-3 pb-1">
+                    <legend class="border-bottom mb-2">{{ legend }}</legend>
+                    <!-- {{ form }} -->
+                    <div class="form-group field-row p-0">
+                        <label for={{form.customer.name}} class="required m-0">{{form.customer.label}}</label>
+                        <div class="related-widget-wrapper">
+                            {% if not form.customer.errors %}
+                                {{ form.customer }}
+                            {% else %}
+                                {{ form.customer|add_classes:"is-invalid" }}
+                            {% endif %}
+                            <a href="#" class="title">
+                                <img src="{% static 'accounts/img/icons/icon-addlink.svg' %}">
+                                <span class="tooltiptext">Add New Customer</span>
+                            </a>
+                        </div>
+                        {% for error in form.customer.errors %}
+                            <div class="invalid-feedback d-block">
+                                <strong id="error_{{ forloop.counter }}">{{ error }}</strong>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group field-row p-0">
+                        <label for={{form.product.name}} class="required m-0">{{form.product.label}}</label>
+                        <div class="related-widget-wrapper">
+                            {% if not form.product.errors %}
+                                {{ form.product }}
+                            {% else %}
+                                {{ form.product|add_classes:"is-invalid" }}
+                            {% endif %}
+                            <a href="#" class="title">
+                                <img src="{% static 'accounts/img/icons/icon-addlink.svg' %}">
+                                <span class="tooltiptext">Add New Product</span>
+                            </a>
+                        </div>
+                        {% for error in form.product.errors %}
+                            <div class="invalid-feedback d-block">
+                                <strong id="error_{{ forloop.counter }}">{{ error }}</strong>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group field-row p-0">
+                        <label for={{form.status.name}} class="required m-0">{{form.status.label}}</label>
+                        <div class="related-widget-wrapper">
+                            {% if not form.status.errors %}
+                                {{ form.status }}
+                            {% else %}
+                                {{ form.status|add_classes:"is-invalid" }}
+                            {% endif %}
+                            <a href="#" style="cursor: default;">
+                                <img src="#" onerror="this.style.visibility='hidden';">
+                            </a>
+                        </div>
+                        {% for error in form.status.errors %}
+                            <div class="invalid-feedback d-block">
+                                <strong id="error_{{ forloop.counter }}">{{ error }}</strong>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </fieldset>
+                <input class="btn btn-outline-primary btn-custom btn-sm" type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block custom-script %}
+    <script src="{% static 'accounts/custom/js/form-script.js' %}"></script>
+{% endblock custom-script %}

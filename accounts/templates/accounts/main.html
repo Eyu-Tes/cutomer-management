@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM</title>
+
+    <!-- Font Awsome CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/fontawsome/css/all.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/bootstrap/css/bootstrap.min.css' %}">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/custom/css/style.css' %}">
+
+    <!-- Custom Form CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/custom/css/form-style.css' %}">
+
+    <!-- Custom ToolTip CSS -->
+    <link rel="stylesheet" href="{% static 'accounts/custom/css/tooltip-style.css' %}">
+</head>
+
+<body>
+    {% include 'accounts/navbar.html' %} 
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}}">{{message}}</div>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %} 
+    
+    {% endblock content %}
+
+    <hr>
+    <!-- <h5>Our footer</h5> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'accounts/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'accounts/popper.min.js' %}"></script>
+    <script src="{% static 'accounts/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'accounts/custom/js/script.js' %}"></script>
+    
+    {% block custom-script %} {% endblock custom-script %}
+</body>
+
+</html>

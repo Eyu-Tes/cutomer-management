@@ -1,0 +1,114 @@
+/* --------------- Form --------------- */
+
+/* Field row is a custom class used to put label and field horizontally for larger view ports */
+.field-row {
+    display: flex;
+    /* Allow the flex items break into multiple lines (breaks the flex item to a new row) */
+    flex-wrap: wrap;
+}
+
+@media (max-width: 767px){
+    .field-row {
+        display: block;
+    }
+}
+
+
+/* --- Form Labels --- */
+.field-row label {
+    padding: 10px 10px 0 0;
+    width: 160px;
+}
+
+.field-row label.required {
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* --- From Fields Wrapper --- */
+.related-widget-wrapper {
+    display: flex;
+}
+
+.related-widget-wrapper a{
+    align-self: center;
+    margin-left: 15px;
+}
+
+
+/* --- Form Fields --- */
+.field-row .form-control {
+    width: 30rem;
+}
+
+@media (max-width: 767px){
+    .field-row .form-control {
+        width: 100%;
+    }
+}
+
+.field-row .form-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    font-size: 16px;
+    padding: 0;
+    transition: border .3s, -webkit-box-shadow 1s;
+}
+
+.field-row .form-control:focus {
+    /* outline & box-shadow must be used together to remove the blue outlines */
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: transparent;
+    border-bottom: 2px solid #26a69a;
+}
+
+
+/* --- Invalid Fields --- */
+.is-invalid {
+    /* Remove the small warning sign on invalid fields */
+    background-image: none !important;
+} 
+
+
+/* --- Invalid Label --- */
+.invalid-feedback {
+    margin-left: 160px;
+}
+
+/* --- Invalid Label (for mobile) --- */
+@media (max-width: 767px) {
+    .invalid-feedback {
+        margin-left: 0;
+    }
+}
+
+
+/* --- Submit Button --- */
+.btn-custom {
+    /* The width is the sum of the width of the label plus the width of the input field */
+    width: calc(30rem + 160px);
+    color: teal;
+    border: 1px solid teal;
+}
+
+@media (max-width: 767px) {
+    .btn-custom {
+        /* The width is a 100% (for mobile) */
+        width: 100%;
+    }
+}
+
+.btn-custom:hover {
+    color: #fff;
+    background-color:  teal;
+}
+
+.btn-custom:active {
+    background-color:  teal !important;
+}
+

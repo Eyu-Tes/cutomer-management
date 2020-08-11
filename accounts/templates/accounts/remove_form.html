@@ -1,0 +1,24 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+  <div class="container-fulid my-3 px-2">
+    <div class="row mx-0">
+        <div class="col p-2">
+            <form class="form-horizontal" action="" method="post" novalidate>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                
+                <fieldset class="form-group border-bottom mb-3 pt-3 pb-1">
+                    <legend class="border-bottom mb-2">{{ legend }}</legend>
+                    <div class="h5 text-danger mb-4">Are you sure you want to delete: </div>
+                    {% for value in object_fields %}
+                        <div class="mb-3">  {{ value }}  </div>
+                    {% endfor %}
+                </fieldset>
+                <a href="{% url 'accounts-home' %}" class="btn btn-outline-secondary btn-sm mr-2 px-3">Cancel</a>
+                <input class="btn btn-outline-danger btn-sm ml-2 px-3" type="submit" value="Confirm">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

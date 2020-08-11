@@ -1,0 +1,14 @@
+{% extends 'accounts/main.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="form-container w-50 m-4">
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock content %}

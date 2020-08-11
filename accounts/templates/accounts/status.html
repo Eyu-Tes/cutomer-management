@@ -1,0 +1,34 @@
+<div class="container-fluid my-3 px-2">
+    <div class="row mx-0">
+        <div class="col-md-4 mb-2 px-2">
+            <div class="card text-white bg-secondary text-center mb-3" id="total-orders">
+                <div class="card-header">
+                    <h5 class="card-title">Total Orders</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ total_orders }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-2 px-2">
+            <div class="card text-white bg-success text-center mb-3" id="orders-delivered">
+                <div class="card-header">
+                    <h5 class="card-title">Orders Delivered</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ delivered_orders }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-2 px-2">
+            <div class="card text-white bg-info text-center mb-3" id="orders-pending">
+                <div class="card-header">
+                    <h5 class="card-title">Orders Pending</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ pending_orders }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
